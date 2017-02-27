@@ -1,0 +1,66 @@
+/* Resets */
+* {
+  color: #777;
+  font-size: 1em; }
+
+html, body {
+  height: 100%;
+  margin: 0; }
+
+a {
+  color: #12826d;
+  text-decoration: none;
+  font-size: 0.9em; }
+  a:hover {
+    text-decoration: underline; }
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none; }
+
+md-content {
+  margin: 20px auto;
+  max-width: 80%; }
+
+md-card {
+  max-width: 300px; }
+
+md-toolbar {
+  background-color: #fff !important;
+  align-content: space-around;
+  justify-content: flex-end;
+  max-height: 100px; }
+  md-toolbar img {
+    max-width: 150px;
+    padding: 10px; }
+  md-toolbar .logo {
+    margin-right: auto; }
+  md-toolbar ul {
+    align-items: center;
+    display: flex; }
+    md-toolbar ul li {
+      display: inline-block; }
+      md-toolbar ul li a {
+        padding: 5px 10px; }
+
+.md-button.md-primary {
+  background-color: #12826d; }
+  .md-button.md-primary:hover {
+    background-color: #159880; }
+  .md-button.md-primary span {
+    color: #fff; }
+
+md-checkbox.md-default-theme.md-checked .md-icon:after,
+md-checkbox.md-checked .md-icon:after {
+  border-color: #fff; }
+
+footer {
+  background-color: #12826d; }
+  footer ul {
+    margin: 0 auto;
+    text-align: center;
+    padding: 10px 0; }
+    footer ul li a {
+      color: #fff;
+      padding: 5px 10px; }

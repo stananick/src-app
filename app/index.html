@@ -1,74 +1,80 @@
 <html lang="en">
   <head>
     <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
     <meta name="viewport" content="initial-scale=1" />
   </head>
+
   <body ng-app="ShoeCalendarApp" ng-cloak>
 
-    <md-content>
-      <form name="shoeForm" ng-controller="ShoeFormSubmit" ng-submit="submitShoeData()">
-        <div layout="row">
-          <md-input-container>
-            <label>Gender</label>
-            <md-select ng-model="form.gender" placeholder="Gender">
-              <md-option value="Men's">Men's</md-option>
-              <md-option value="Women's">Women's</md-option>
-              <md-option value="Kids'">Kids'</md-option>
-            </md-select>
-          </md-input-container>
+    <section layout="column" layout-fill="layout-fill">
+      <appHeader></appHeader>
 
-          <md-input-container>
-            <label>Brand</label>
-            <md-select ng-model="form.brand" placeholder="Brand">
-              <md-option value="Nike">Nike</md-option>
-              <md-option value="Under Armour">Under Armour</md-option>
-              <md-option value="Jordan">Jordan</md-option>
-              <md-option value="adidas">adidas</md-option>
-              <md-option value="Reebok">Reebok</md-option>
-            </md-select>
-          </md-input-container>
+      <md-content layout="column" flex="flex">
+        <form name="shoeForm" ng-controller="ShoeFormSubmitCtrl" ng-submit="submitShoeData()">
+          <div layout="row">
+            <md-input-container>
+              <label>Gender</label>
+              <md-select ng-model="form.gender" placeholder="Gender">
+                <md-option value="Men's">Men's</md-option>
+                <md-option value="Women's">Women's</md-option>
+                <md-option value="Kids'">Kids'</md-option>
+              </md-select>
+            </md-input-container>
 
-          <md-input-container>
-            <label>Shoe Name</label>
-            <input type="text" ng-model="form.shoeName" />
-          </md-input-container>
-        </div>
+            <md-input-container>
+              <label>Brand</label>
+              <md-select ng-model="form.brand" placeholder="Brand">
+                <md-option value="Nike">Nike</md-option>
+                <md-option value="Under Armour">Under Armour</md-option>
+                <md-option value="Jordan">Jordan</md-option>
+                <md-option value="adidas">adidas</md-option>
+                <md-option value="Reebok">Reebok</md-option>
+              </md-select>
+            </md-input-container>
 
-        <div layout="row">
-          <md-input-container>
-            <md-datepicker ng-model="form.launchDate" placeholder="Launch Date"></md-datepicker>
-          </md-input-container>
+            <md-input-container>
+              <label>Shoe Name</label>
+              <input type="text" ng-model="form.shoeName" />
+            </md-input-container>
+          </div>
 
-          <md-input-container>
-            <label>Launch Time</label>
-            <input type="text" ng-model="form.launchTime" />
-          </md-input-container>
-        </div>
+          <div layout="row">
+            <md-input-container>
+              <md-datepicker ng-model="form.launchDate" placeholder="Launch Date"></md-datepicker>
+            </md-input-container>
 
-        <md-checkbox ng-model="form.unavail" ng-true-value aria-label="Available">Available</md-checkbox>
+            <md-input-container>
+              <label>Launch Time</label>
+              <input type="text" ng-model="form.launchTime" />
+            </md-input-container>
+          </div>
 
-        <md-checkbox ng-model="form.soldOut" ng-false-value aria-label="Sold Out">Sold Out</md-checkbox>
+          <md-checkbox ng-model="form.unavail" ng-true-value aria-label="Available">Available</md-checkbox>
 
-        <md-checkbox ng-model="form.goLiveNow" ng-false-value aria-label="Go Live Now">Go Live Now</md-checkbox>
+          <md-checkbox ng-model="form.soldOut" ng-false-value aria-label="Sold Out">Sold Out</md-checkbox>
 
-        <md-checkbox ng-model="form.findInStore" aria-label="Find In Store">Jordan (Find in Store)</md-checkbox>
+          <md-checkbox ng-model="form.goLiveNow" ng-false-value aria-label="Go Live Now">Go Live Now</md-checkbox>
 
-        <md-checkbox ng-model="form.holdImgUntilLaunch" aria-label="Don't Display Image Until Launch Date/Time">Don't Display Image Until Launch Date/Time</md-checkbox>
+          <md-checkbox ng-model="form.findInStore" aria-label="Find In Store">Jordan (Find in Store)</md-checkbox>
 
-        <md-button type="submit" class="md-primary">Submit</md-button>
-      </form>
+          <md-checkbox ng-model="form.holdImgUntilLaunch" aria-label="Don't Display Image Until Launch Date/Time">Don't Display Image Until Launch Date/Time</md-checkbox>
 
+          <md-button type="submit" class="md-primary">Submit</md-button>
 
-      <div layout="row">
-        {{gender}} {{form.brand}} {{form.shoeName}}
-      </div>
+          <div layout="row">
+            {{form.gender}} {{form.brand}} {{form.shoeName}}
+          </div>
 
-      <div layout="row">
-        Will launch on {{form.launchDate | date:'fullDate'}} at {{form.launchTime}}
-      </div>
+          <div layout="row">
+            Will launch on {{form.launchDate | date:'fullDate'}} at {{form.launchTime}}
+          </div>
+        </form>
 
-    </md-content>
+      </md-content>
 
+    <appFooter></appFooter>
+  </section>
 
     <!-- Angular Material Dependencies -->
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
